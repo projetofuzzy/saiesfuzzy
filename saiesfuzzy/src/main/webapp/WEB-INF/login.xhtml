@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<ui:composition template="/principal.xhtml"
+				xmlns:h="http://java.sun.com/jsf/html"
+				xmlns:f="http://java.sun.com/jsf/core"
+				xmlns:ui="http://java.sun.com/jsf/facelets"
+				xmlns:p="http://primefaces.org/ui">
+				
+	<ui:define name="conteudo">
+	
+		<p:panel style="margin-bottom:10px;">
+			<p:outputLabel value="#{msgs.usuario_informacoes_acesso}"/>
+		</p:panel>				
+	
+		<p:panel>
+			<h:form id="login" onsubmit="document.getElementById('login').action='j_security_check';" prependId="false">
+			    <p:panelGrid columns="2" style="width:100%">
+			        <p:outputLabel for="j_username" value="Identidade:" />
+			        <p:inputText id="j_username" name="j_username" />            
+			        <p:outputLabel for="j_password" value="Senha:" />
+			        <p:password id="j_password" name="j_password"/>
+			        <p:outputLabel/>
+			        <p:commandButton id="submit" ajax="false" icon="ui-icon-key"/>
+			    </p:panelGrid>
+		
+			</h:form>	
+		</p:panel>
+	
+	</ui:define>
+		
+</ui:composition>
